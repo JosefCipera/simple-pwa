@@ -37,9 +37,9 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 2px; /* Minimální mezery mezi čárkami */
+    gap: 1px; /* Minimální mezery mezi čárkami */
     cursor: pointer;
-    width: 110%; /* Roztažení přes celou šířku + trochu navíc */
+    width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
     justify-content: space-between; /* Rovnoměrné rozložení */
     max-height: 70%; /* Zůstanou v dolní polovině */
 }
@@ -74,8 +74,8 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 1px; /* Ještě menší mezery na mobilu */
-        width: 110%; /* Roztažení přes celou šířku + trochu navíc */
+        gap: 0.5px; /* Ještě menší mezery na mobilu */
+        width: 120%; /* Roztažení přes celou šířku + navíc */
         max-height: 70%;
     }
     .wave {
