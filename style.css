@@ -37,16 +37,14 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 1px; /* Minimální mezery mezi čárkami */
     cursor: pointer;
     width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
-    justify-content: space-between; /* Rovnoměrné rozložení */
     max-height: 70%; /* Zůstanou v dolní polovině */
 }
 
 .wave {
     display: inline-block;
-    width: 6px !important; /* Tenké čárky jako na obrázku */
+    width: 20%; /* Každá čárka zabere přesně 20% šířky kontejneru, aby se vešly 5 vedle sebe na 100% */
     background-color: #4444ff; /* Modrá barva z obrázku */
     border-radius: 0; /* Žádné zaoblení */
     transition: opacity 0.2s; /* Pro animaci */
@@ -74,12 +72,11 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 0.5px; /* Ještě menší mezery na mobilu */
         width: 120%; /* Roztažení přes celou šířku + navíc */
         max-height: 70%;
     }
     .wave {
-        width: 4px !important; /* Ještě tenčí na mobilu */
+        width: 20%; /* Každá čárka zabere 20% šířky i na mobilu */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 2vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 4vw; }
