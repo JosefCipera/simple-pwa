@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             recorder.ondataavailable = (e) => {
                 chunks.push(e.data);
-                console.log('Data nahrávky přijata:', e.data);
+                console.log('Data nahrávky:', e.data);
             };
 
             recorder.onstop = () => {
@@ -43,14 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
     soundWaves.addEventListener('click', () => {
         console.log('Klik na vlny – pokus o přehrání');
         if (lastRecording) {
-            console.log('Přehrávám nahrávku, velikost:', lastRecording.size);
             const audioUrl = URL.createObjectURL(lastRecording);
             const audio = new Audio(audioUrl);
+            console.log('Přehrávám nahrávku, velikost:', lastRecording.size);
             audio.play().then(() => {
                 soundWaves.classList.add('recording');
                 console.log('Přehrávání začalo.');
             }).catch(err => {
                 console.error('Chyba při přehrávání:', err);
+                alert('Nepodařilo se přehrát – zkontroluj povolení zvuku.');
             });
             audio.onended = () => {
                 soundWaves.classList.remove('recording');
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         } else {
             console.log('Žádná nahrávka k přehrání.');
+            alert('Nejprve nahraj zvuk kliknutím na mikrofon.');
         }
     });
 });
