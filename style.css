@@ -23,7 +23,7 @@ body {
 }
 
 #micIcon {
-    font-size: 350px;
+    font-size: 350px; /* Šířka ikony je odvozená od font-size */
     color: #333;
     cursor: pointer;
     transition: color 0.3s;
@@ -37,13 +37,13 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 20px; /* Vracíme mezery na rozumnou hodnotu */
+    gap: 20px;
     cursor: pointer;
 }
 
 .wave {
     display: inline-block;
-    width: 36px !important; /* Třikrát širší (z 12px na 36px), !important pro přepsání */
+    width: 50px !important; /* Větší než mikrofon, původně 12px, teď 50px */
     background-color: #4444ff;
     border-radius: 6px;
     transition: height 0.2s;
@@ -70,10 +70,10 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 15px; /* Menší mezery na mobilu */
+        gap: 15px;
     }
     .wave {
-        width: 30px !important; /* Třikrát širší (z 10px na 30px) */
+        width: 40px !important; /* Větší ніж 80vw mikrofonu v poměru, původně 10px */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
