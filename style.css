@@ -34,24 +34,42 @@ body {
 }
 
 .sound-waves {
-    width: 100%; /* Celá šířka dolní poloviny */
-    height: 60%; /* Většina výšky dolní poloviny */
-    background: linear-gradient(90deg, #4444ff 0%, #4444ff 50%, transparent 50%, transparent 100%);
-    background-size: 40px 100%; /* Šířka "vln" v gradientu */
-    transform: rotate(90deg); /* Otočení */
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    gap: 2px; /* Minimální mezery mezi pruhy */
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    width: 100%; /* Celá šířka dolní poloviny */
+    justify-content: space-between; /* Rovnoměrné rozložení */
+    max-height: 70%; /* Zůstanou v dolní polovině */
 }
 
-/* Animace */
-.sound-waves.recording {
-    animation: waveMove 1s infinite linear;
+.wave {
+    display: inline-block;
+    width: 8px !important; /* Tenké pruhy */
+    background-color: #4444ff; /* Modrá barva jako na obrázku */
+    border-radius: 0; /* Žádné zaoblení */
+    transition: opacity 0.2s; /* Pro animaci */
 }
 
-@keyframes waveMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 40px 0; }
+/* Výšky pro 15 vln – rovnoměrné */
+.wave:nth-child(1), .wave:nth-child(15) { height: 10px; }
+.wave:nth-child(2), .wave:nth-child(14) { height: 20px; }
+.wave:nth-child(3), .wave:nth-child(13) { height: 30px; }
+.wave:nth-child(4), .wave:nth-child(12) { height: 40px; }
+.wave:nth-child(5), .wave:nth-child(11) { height: 50px; }
+.wave:nth-child(6), .wave:nth-child(10) { height: 60px; }
+.wave:nth-child(7), .wave:nth-child(9) { height: 70px; }
+.wave:nth-child(8) { height: 80px; }
+
+/* Animace během nahrávání/přehrávání */
+.sound-waves.recording .wave {
+    animation: pulseOpacity 0.5s infinite alternate;
+}
+
+@keyframes pulseOpacity {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
 
 /* Mobilní verze */
@@ -61,11 +79,19 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
+        gap: 1px; /* Ještě menší mezery na mobilu */
         width: 100%;
-        height: 60%;
-        background-size: 30px 100%; /* Menší vlny na mobilu */
+        max-height: 70%;
     }
-    .sound-waves.recording {
-        animation: waveMove 0.8s infinite linear;
+    .wave {
+        width: 6px !important; /* Ještě tenčí pruhy na mobilu */
     }
+    .wave:nth-child(1), .wave:nth-child(15) { height: 2vw; }
+    .wave:nth-child(2), .wave:nth-child(14) { height: 4vw; }
+    .wave:nth-child(3), .wave:nth-child(13) { height: 6vw; }
+    .wave:nth-child(4), .wave:nth-child(12) { height: 8vw; }
+    .wave:nth-child(5), .wave:nth-child(11) { height: 10vw; }
+    .wave:nth-child(6), .wave:nth-child(10) { height: 12vw; }
+    .wave:nth-child(7), .wave:nth-child(9) { height: 14vw; }
+    .wave:nth-child(8) { height: 16vw; }
 }
