@@ -6,10 +6,14 @@
     <title>Simple PWA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    <!-- Přidáme Font Awesome pro ikony (alternativně použij obrázky) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <button id="greetButton">Klikni mě!</button>
-    <p id="message"></p>
+    <div class="icon-container">
+        <i class="fas fa-microphone" id="micIcon"></i>
+        <i class="fas fa-volume-up" id="soundIcon"></i>
+    </div>
     <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
