@@ -37,25 +37,26 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 15px; /* Menší rozestupy, aby zůstaly v dolní polovině */
+    gap: 10px; /* Menší rozestupy */
     cursor: pointer;
-    width: 70%; /* Zabere 70% šířky dolní poloviny */
-    justify-content: space-between; /* Rozloží vlny rovnoměrně */
-    max-height: 80%; /* Omezíme výšku, aby nepřesahovaly */
+    width: 85%; /* Roztažení přes 85% šířky dolní poloviny */
+    justify-content: space-between; /* Rovnoměrné rozložení */
+    max-height: 70%; /* Omezíme, aby nepřesahovaly */
 }
 
 .wave {
     display: inline-block;
-    width: 20px !important; /* Širší čárky (z 12px na 20px) */
+    width: 12px !important; /* Původní šířka, ne tlusté */
     background-color: #4444ff;
     border-radius: 6px;
     transition: height 0.2s;
 }
 
-/* Výšky vln – menší, aby nepřesahovaly */
-.wave:nth-child(1), .wave:nth-child(5) { height: 40px; }
-.wave:nth-child(2), .wave:nth-child(4) { height: 80px; }
-.wave:nth-child(3) { height: 120px; }
+/* Výšky pro 7 vln */
+.wave:nth-child(1), .wave:nth-child(7) { height: 40px; }
+.wave:nth-child(2), .wave:nth-child(6) { height: 80px; }
+.wave:nth-child(3), .wave:nth-child(5) { height: 110px; }
+.wave:nth-child(4) { height: 140px; }
 
 /* Animace */
 .recording .wave {
@@ -74,15 +75,16 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 10px; /* Ještě menší rozestupy na mobilu */
-        width: 80%; /* Víc šířky na mobilu */
+        gap: 8px; /* Ještě menší rozestupy na mobilu */
+        width: 90%; /* Max šířka na mobilu */
         justify-content: space-between;
-        max-height: 80%;
+        max-height: 70%;
     }
     .wave {
-        width: 15px !important; /* Širší čárky na mobilu */
+        width: 10px !important; /* Původní šířka */
     }
-    .wave:nth-child(1), .wave:nth-child(5) { height: 8vw; }
-    .wave:nth-child(2), .wave:nth-child(4) { height: 16vw; }
-    .wave:nth-child(3) { height: 24vw; }
+    .wave:nth-child(1), .wave:nth-child(7) { height: 8vw; }
+    .wave:nth-child(2), .wave:nth-child(6) { height: 16vw; }
+    .wave:nth-child(3), .wave:nth-child(5) { height: 22vw; }
+    .wave:nth-child(4) { height: 28vw; }
 }
