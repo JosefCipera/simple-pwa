@@ -37,13 +37,13 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 40px; /* Zdvojnásobíme mezery na 40px */
+    gap: 20px; /* Vracíme mezery na rozumnou hodnotu */
     cursor: pointer;
 }
 
 .wave {
     display: inline-block;
-    width: 24px; /* Zdvojnásobíme šířku z 12px na 24px */
+    width: 36px !important; /* Třikrát širší (z 12px na 36px), !important pro přepsání */
     background-color: #4444ff;
     border-radius: 6px;
     transition: height 0.2s;
@@ -70,10 +70,10 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 30px; /* O něco menší mezery na mobilu */
+        gap: 15px; /* Menší mezery na mobilu */
     }
     .wave {
-        width: 20px; /* Zdvojnásobení šířky i na mobilu (z 10px na 20px) */
+        width: 30px !important; /* Třikrát širší (z 10px na 30px) */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
