@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple PWA</title>
+    <title>Recording PWA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <!-- Přidáme Font Awesome pro ikony (alternativně použij obrázky) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="icon-container">
-        <i class="fas fa-microphone" id="micIcon"></i>
-        <i class="fas fa-volume-up" id="soundIcon"></i>
+    <div class="container">
+        <div class="top-half">
+            <i class="fas fa-microphone" id="micIcon"></i>
+        </div>
+        <div class="bottom-half">
+            <div class="sound-waves" id="soundWaves">
+                <span class="wave"></span>
+                <span class="wave"></span>
+                <span class="wave"></span>
+                <span class="wave"></span>
+                <span class="wave"></span>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
     <script>
