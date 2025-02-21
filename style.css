@@ -23,7 +23,7 @@ body {
 }
 
 #micIcon {
-    font-size: 350px; /* Základní velikost pro desktop */
+    font-size: 350px;
     color: #333;
     cursor: pointer;
     transition: color 0.3s;
@@ -37,13 +37,13 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 20px;
+    gap: 40px; /* Zdvojnásobíme mezery na 40px */
     cursor: pointer;
 }
 
 .wave {
     display: inline-block;
-    width: 12px;
+    width: 24px; /* Zdvojnásobíme šířku z 12px na 24px */
     background-color: #4444ff;
     border-radius: 6px;
     transition: height 0.2s;
@@ -51,7 +51,7 @@ body {
 
 .wave:nth-child(1), .wave:nth-child(5) { height: 80px; }
 .wave:nth-child(2), .wave:nth-child(4) { height: 150px; }
-.wave:nth-child(3) { height: 220px; } /* Větší vlny */
+.wave:nth-child(3) { height: 220px; }
 
 /* Animace */
 .recording .wave {
@@ -63,13 +63,19 @@ body {
     to { transform: scaleY(1.2); }
 }
 
-/* Mobilní verze – přepíšeme velikosti */
+/* Mobilní verze */
 @media (max-width: 768px) {
     #micIcon { 
-        font-size: 80vw !important; /* 80% šířky viewportu */
+        font-size: 80vw !important;
         max-width: 100%; 
+    }
+    .sound-waves {
+        gap: 30px; /* O něco menší mezery na mobilu */
+    }
+    .wave {
+        width: 20px; /* Zdvojnásobení šířky i na mobilu (z 10px na 20px) */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
-    .wave:nth-child(3) { height: 45vw; } /* Proporcionálně k šířce */
+    .wave:nth-child(3) { height: 45vw; }
 }
