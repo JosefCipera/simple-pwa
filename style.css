@@ -23,7 +23,7 @@ body {
 }
 
 #micIcon {
-    font-size: 350px;
+    font-size: 350px; /* Základní velikost pro desktop */
     color: #333;
     cursor: pointer;
     transition: color 0.3s;
@@ -37,48 +37,39 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
+    gap: 20px;
     cursor: pointer;
-    width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
-    max-height: 70%; /* Zůstanou v dolní polovině */
 }
 
 .wave {
     display: inline-block;
-    width: 20%; /* Každá čárka zabere přesně 20% šířky kontejneru, aby se vešly 5 vedle sebe na 100% */
-    background-color: #4444ff; /* Modrá barva z obrázku */
-    border-radius: 0; /* Žádné zaoblení */
-    transition: opacity 0.2s; /* Pro animaci */
+    width: 12px;
+    background-color: #4444ff;
+    border-radius: 6px;
+    transition: height 0.2s;
 }
 
-/* Výšky pro 5 vln – rovnoměrné */
-.wave:nth-child(1), .wave:nth-child(5) { height: 10px; }
-.wave:nth-child(2), .wave:nth-child(4) { height: 20px; }
-.wave:nth-child(3) { height: 30px; }
+.wave:nth-child(1), .wave:nth-child(5) { height: 80px; }
+.wave:nth-child(2), .wave:nth-child(4) { height: 150px; }
+.wave:nth-child(3) { height: 220px; } /* Větší vlny */
 
-/* Animace během nahrávání/přehrávání */
-.sound-waves.recording .wave {
-    animation: pulseOpacity 0.5s infinite alternate;
+/* Animace */
+.recording .wave {
+    animation: pulse 0.5s infinite alternate;
 }
 
-@keyframes pulseOpacity {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+@keyframes pulse {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(1.2); }
 }
 
-/* Mobilní verze */
+/* Mobilní verze – přepíšeme velikosti */
 @media (max-width: 768px) {
     #micIcon { 
-        font-size: 80vw !important;
+        font-size: 80vw !important; /* 80% šířky viewportu */
         max-width: 100%; 
     }
-    .sound-waves {
-        width: 120%; /* Roztažení přes celou šířku + navíc */
-        max-height: 70%;
-    }
-    .wave {
-        width: 20%; /* Každá čárka zabere 20% šířky i na mobilu */
-    }
-    .wave:nth-child(1), .wave:nth-child(5) { height: 2vw; }
-    .wave:nth-child(2), .wave:nth-child(4) { height: 4vw; }
-    .wave:nth-child(3) { height: 6vw; }
+    .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
+    .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
+    .wave:nth-child(3) { height: 45vw; } /* Proporcionálně k šířce */
 }
