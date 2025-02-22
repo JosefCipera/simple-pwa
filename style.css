@@ -37,7 +37,7 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 5px; /* Snížíme mezery na minimum */
+    gap: 5px; /* Mezeru pro desktop */
     cursor: pointer;
     width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
     justify-content: space-between; /* Rovnoměrné rozložení */
@@ -73,7 +73,7 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 3px; /* Menší mezery na mobilu */
+        gap: 1px; /* Minimální mezery na mobilu */
         width: 120%; /* Roztažení přes celou šířku + navíc */
         max-height: 70%;
     }
