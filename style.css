@@ -36,7 +36,7 @@ body {
 .sound-waves {
     display: flex;
     align-items: center;
-   // transform: rotate(90deg);
+    transform: rotate(90deg);
     gap: 20px;
     cursor: pointer;
 }
