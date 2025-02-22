@@ -73,12 +73,13 @@ body {
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 1px; /* Minimální mezery na mobilu */
+        gap: 0; /* Žádné mezery na mobilu */
         width: 120%; /* Roztažení přes celou šířku + navíc */
         max-height: 70%;
+        justify-content: flex-start; /* Odstraníme space-between, aby se čárky tlačily k sobě */
     }
     .wave {
-        width: 10px; /* Zachováváme tenkou šířku na mobilu */
+        width: 20%; /* Každá čárka zabere 20% šířky, aby se vešly 5 vedle sebe na 100% */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
