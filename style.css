@@ -37,13 +37,16 @@ body {
     display: flex;
     align-items: center;
     transform: rotate(90deg);
-    gap: 20px;
+    gap: 5px; /* Snížíme mezery na minimum */
     cursor: pointer;
+    width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
+    justify-content: space-between; /* Rovnoměrné rozložení */
+    max-height: 70%; /* Zůstanou v dolní polovině */
 }
 
 .wave {
     display: inline-block;
-    width: 12px;
+    width: 12px; /* Zachováváme tenkou šířku čárek */
     background-color: #4444ff;
     border-radius: 6px;
     transition: height 0.2s;
@@ -68,6 +71,14 @@ body {
     #micIcon { 
         font-size: 80vw !important; /* 80% šířky viewportu */
         max-width: 100%; 
+    }
+    .sound-waves {
+        gap: 3px; /* Menší mezery na mobilu */
+        width: 120%; /* Roztažení přes celou šířku + navíc */
+        max-height: 70%;
+    }
+    .wave {
+        width: 10px; /* Zachováváme tenkou šířku na mobilu */
     }
     .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
     .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
