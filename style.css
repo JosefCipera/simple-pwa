@@ -34,54 +34,31 @@ body {
 }
 
 .sound-waves {
-    display: flex;
-    align-items: center;
-    transform: rotate(90deg);
-    gap: 5px; /* Mezeru pro desktop */
-    cursor: pointer;
     width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
-    justify-content: space-between; /* Rovnoměrné rozložení */
     max-height: 70%; /* Zůstanou v dolní polovině */
+    transform: rotate(90deg); /* Otočení o 90° jako u vln */
+    cursor: pointer;
+    object-fit: contain; /* Zachování poměru, přizpůsobení výšky */
 }
 
-.wave {
-    display: inline-block;
-    width: 12px; /* Zachováváme tenkou šířku čárek */
-    background-color: #4444ff;
-    border-radius: 6px;
-    transition: height 0.2s;
+/* Animace během nahrávání/přehrávání */
+.sound-waves.recording {
+    animation: pulseOpacity 0.5s infinite alternate;
 }
 
-.wave:nth-child(1), .wave:nth-child(5) { height: 80px; }
-.wave:nth-child(2), .wave:nth-child(4) { height: 150px; }
-.wave:nth-child(3) { height: 220px; } /* Větší vlny */
-
-/* Animace */
-.recording .wave {
-    animation: pulse 0.5s infinite alternate;
+@keyframes pulseOpacity {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
 
-@keyframes pulse {
-    from { transform: scaleY(1); }
-    to { transform: scaleY(1.2); }
-}
-
-/* Mobilní verze – přepíšeme velikosti */
+/* Mobilní verze */
 @media (max-width: 768px) {
     #micIcon { 
         font-size: 80vw !important; /* 80% šířky viewportu */
         max-width: 100%; 
     }
     .sound-waves {
-        gap: 0; /* Žádné mezery na mobilu */
         width: 120%; /* Roztažení přes celou šířku + navíc */
         max-height: 70%;
-        justify-content: flex-start; /* Odstraníme space-between, aby se čárky tlačily k sobě */
     }
-    .wave {
-        width: 20%; /* Každá čárka zabere 20% šířky, aby se vešly 5 vedle sebe na 100% */
-    }
-    .wave:nth-child(1), .wave:nth-child(5) { height: 15vw; }
-    .wave:nth-child(2), .wave:nth-child(4) { height: 30vw; }
-    .wave:nth-child(3) { height: 45vw; } /* Proporcionálně k šířce */
 }
