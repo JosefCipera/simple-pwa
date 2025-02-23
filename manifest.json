@@ -16,5 +16,15 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+        {
+            "src": "/simple-pwa/microphone-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+        {
+            "src": "/simple-pwa/microphone-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
     ]
 }
