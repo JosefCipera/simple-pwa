@@ -2,10 +2,13 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open('v1').then((cache) => {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/style.css',
-                '/app.js'
+                '/simple-pwa/',  // Základní URL
+                '/simple-pwa/index.html',
+                '/simple-pwa/style.css',
+                '/simple-pwa/app.js',
+                '/simple-pwa/manifest.json',  // Přidáme manifest, aby se cachoval
+                '/simple-pwa/microphone-192.png',   // Přidáme ikony
+                '/simple-pwa/microphone-512.png'
             ]);
         })
     );
