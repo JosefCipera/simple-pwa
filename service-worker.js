@@ -8,7 +8,9 @@ self.addEventListener('install', (event) => {
                 '/simple-pwa/app.js',
                 '/simple-pwa/manifest.json',  // Přidáme manifest, aby se cachoval
                 '/simple-pwa/microphone-192.png',   // Přidáme ikony
-                '/simple-pwa/microphone-512.png'
+                '/simple-pwa/microphone-512.png',
+                '/simple-pwa/microphone-144.png',
+                '/simple-pwa/microphone-96.png'
             ]);
         })
     );
