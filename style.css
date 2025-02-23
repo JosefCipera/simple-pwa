@@ -34,7 +34,7 @@ body {
 }
 
 .sound-waves {
-    width: 100%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
+    width: 120%; /* Roztažení přes celou šířku + navíc, aby přesáhly mikrofon */
     max-height: 70%; /* Zůstanou v dolní polovině */
    // transform: rotate(90deg); /* Otočení o 90° jako u vln */
     cursor: pointer;
